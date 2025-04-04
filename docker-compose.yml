@@ -107,7 +107,7 @@ services:
     depends_on:
       - zammad-railsserver
     environment:
-      - SERVICE_FQDN_ZAMMAD-NGINX_80
+      - SERVICE_FQDN_ZAMMADNGINX_80
 
   zammad-postgresql:
     environment:
