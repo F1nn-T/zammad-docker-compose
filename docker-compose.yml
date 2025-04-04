@@ -30,7 +30,7 @@ x-shared:
       ELASTICSEARCH_PASS: ${ELASTICSEARCH_PASS:-zammad}
       ELASTICSEARCH_NAMESPACE:
       ELASTICSEARCH_REINDEX:
-      NGINX_PORT:
+      NGINX_PORT: 80
       NGINX_CLIENT_MAX_BODY_SIZE:
       NGINX_SERVER_NAME:
       NGINX_SERVER_SCHEME:
@@ -106,6 +106,8 @@ services:
       - "${NGINX_EXPOSE_PORT:-8080}:${NGINX_PORT:-8080}"
     depends_on:
       - zammad-railsserver
+    environment:
+      - SERVICE_FQDN_ZAMMAD_80
 
   zammad-postgresql:
     environment:
